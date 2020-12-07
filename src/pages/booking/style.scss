@@ -1,0 +1,21 @@
+.movie{
+
+    margin-left: 4.3%;
+    margin-top: 80px;
+    float: left;
+    padding-top: 30px;
+    width: 69.7%;
+
+    &__right{
+        max-width: 1000px;
+        margin: auto;
+
+        &__content{
+            margin: auto;
+            text-align: center;
+            .content__screen{
+
+            }
+        }
+    }
+}
