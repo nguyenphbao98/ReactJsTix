@@ -1,0 +1,79 @@
+@import '../../assets/scss/variable';
+@import '../../assets/scss/function';
+.header{
+    
+    .navbar{
+        // background-color: rgba(255,255,255,.90);
+        background-color: bg("Primary");
+        opacity: 0.9;
+        width: 100%;
+        height: spacing(6);
+        box-shadow: 0 0 15px rgba(0,0,0,.3);
+        .navbar-brand{
+            img{
+                max-width: spacing(5);
+            }
+        }
+    }
+    .collapse{
+        background-color: bg("Primary");
+        .navbar-nav{
+            li{
+                a{
+                    color: text_color("Primary");
+                    transition:all .2s;
+                    text-decoration: none;
+                    &:hover{
+                        color: text_color("TextOrange"); 
+                    }
+                }
+            }
+        }
+       .navbar-brand{
+           .user__logo{
+                color: text_color("TextWhite");
+                width: spacing(3);
+                background-color: bg("BgLogoBtn");
+                margin-right: spacing(0.5);
+                border-radius: spacing(2.5);
+                font-size: spacing(1.6);
+                line-height: spacing(3.2);
+           }
+           .user__img img{
+                height: auto;
+                width: spacing(3);
+                border-radius: spacing(2.5);
+                margin-right: spacing(0.5);
+           }
+           span{
+                color: text_color("TextUserLogo");
+                font-size: spacing(1.3);
+                line-height: spacing(3);
+                padding-right: spacing(1);
+           }
+       } 
+       .d-flex{
+        .nav__logo{
+            i{
+                 color: text_color("TextUserLogo");
+            }
+            &:hover{
+                 text-decoration: none;
+             }
+        }
+        .dropdown{
+         a{
+             color: text_color("TextUserLogo");
+         }
+         .dropdown-menu{
+             a{
+                 color: text_color("Primary");
+                 &:hover{
+                     background-color: bg("BgDropColor");
+                 }
+             }
+         }
+         }
+       }
+    }
+}

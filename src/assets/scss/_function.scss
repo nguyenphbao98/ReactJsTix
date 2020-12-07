@@ -1,0 +1,20 @@
+@function bg($color){
+    @if(map-has-key($map: $arr_background, $key: $color)){
+        @return map-get($map: $arr_background, $key: $color);
+    }
+    @warn "Sai key rồi bạn ơi";
+}
+
+@function text_color($color){
+    @if(map-has-key($map: $arr_text, $key: $color)){
+        @return map-get($map: $arr_text, $key: $color);
+    }
+    @warn "Sai key rồi bạn ơi";
+}
+
+@function spacing($scaleX,$scaleY: null){
+    @if ($scaleY == null){
+        @return $scaleX * $spacing;
+    }
+    @return $scaleX * $spacing $scaleY * $spacing;
+}

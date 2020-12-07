@@ -1,0 +1,85 @@
+//primary màu chính
+//secondary màu tương phản làm nổi màu chính
+//nên chỉnh mixin cho text , button , input
+
+// bg Color
+$arr_background:(
+    "Primary" : #ffffff,
+    "Secondary" : #fb4226,
+    "FooterColor" : #222,
+    "BgButton" : #4a4a4a,
+    "BgStarSpan" : #1f2e46,
+    "BgLogoBtn" : #5c3b2c,
+    "BgDropColor" : #337ab7,
+    "BgGray": #333,
+    "BgLightGray" : #c0b5b1,
+    "BorderGrey" : #e9e9e9,
+    "BgCheckout" : #afafaf,
+);
+
+// text color
+$arr_text:(
+    "Primary" : #000,
+    "Secondary" : #9b9b9b,
+    "TextWhite" : #ffffff,
+    "TextGreen" : #108f3e,
+    "TextOrange" : #fb4226,
+    "TextUserLogo" : #c0b5b1,
+    "TextLightGreen" : #44c020,
+    "TextLightGrey" : #bbb,
+    "TextCheckOut" :  #212529,
+    "TextBlack" : #000,
+    "LightBorderGrey" : #ebebec,
+    "NormalSeat" : #3e515d,
+    "VipSeat" : #f7b500,
+    "CoupleSeat" : #b03550,
+    "TakenSeat" : #edf0f1,
+    "DisableSeat" : #cfd3d7,
+    "PickingSeat" : #44c020,
+);
+
+// font size
+$h1:48px;
+$h2:40px;
+$h3:30px;
+$h4:24px;
+$h5:18px;
+$h6:16px;
+$fs_footer:12px;
+
+$subTitle1:14px;
+$subTitle2:12px;
+
+$body1:10px;
+$body2:9px;
+$body3:10px;
+
+//FONT Weight
+$fwBold: 700;
+$fwMedium: 600;
+$fwRegular: 400;
+$fwLight: 300;
+
+//SPACING
+$spacing: 10px; 
+
+@function bg($color){
+    @if(map-has-key($map: $arr_background, $key: $color)){
+        @return map-get($map: $arr_background, $key: $color);
+    }
+    @warn "Sai key rồi bạn ơi";
+}
+
+@function text_color($color){
+    @if(map-has-key($map: $arr_text, $key: $color)){
+        @return map-get($map: $arr_text, $key: $color);
+    }
+    @warn "Sai key rồi bạn ơi";
+}
+
+@function spacing($scaleX,$scaleY: null){
+    @if ($scaleY == null){
+        @return $scaleX * $spacing;
+    }
+    @return $scaleX * $spacing $scaleY * $spacing;
+}
