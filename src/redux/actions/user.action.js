@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import {startLoading,stopLoading} from '../actions/common.action';
 
-
 export function loginRequest(user,history) {
     return (dispatch) => {
         dispatch(startLoading());
@@ -13,6 +12,9 @@ export function loginRequest(user,history) {
              //lưu xuống local Strorage
             localStorage.setItem("user",JSON.stringify(res.data));
 
+            // dispatch
+            dispatch(getUserSuccess(res.data))
+
             //chuyển về home
             history.push("/");
             
@@ -21,5 +23,12 @@ export function loginRequest(user,history) {
             alert(err);
             dispatch(stopLoading());
         })
+    }
+}
+
+function getUserSuccess(user){
+    return {
+        type : "GET_USER_SUCCESS",
+        payload : user,
     }
 }

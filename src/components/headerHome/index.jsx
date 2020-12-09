@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './style.scss'
 import logo from '../../assets/img/web-logo.png';
 import userImg from '../../assets/img/avatar.png';
 
-function HeaderHome(props) {
+function HeaderHome() {
     //const {hoTen} = this.props;
+
+    const userData = JSON.parse(localStorage.getItem("user"));
+    const user = useState(userData);
+
     return (
         // header
     <header className="header">
@@ -30,9 +34,11 @@ function HeaderHome(props) {
                 <a className="nav-link" href="#">Ứng dụng</a>
                 </li>
             </ul>
+
+            {/* {} */}
             <a className="navbar-brand d-flex user" href="#">
                 <div className="user__logo text-center">B</div>
-                <span>Bảo Nguyễn</span>
+                <span>{user['hoTen']}</span>
             </a>
 
             <a className="navbar-brand d-flex user" href="#">

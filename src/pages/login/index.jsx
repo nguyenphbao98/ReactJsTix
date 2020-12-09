@@ -1,23 +1,29 @@
-import React , { Component } from 'react';
+import React from 'react';
 import './style.scss'
 import logo from '../../assets/img/logo-login.png'
 import { TextField , Button } from '@material-ui/core';
 import { Formik, Form , Field } from 'formik';
 import * as Yub from 'yup';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { loginRequest } from '../../redux/actions/user.action';
 
 const signInUserSchema = Yub.object().shape({
     taiKhoan : Yub.string().required("Tài khoản không được để trống"),
     matKhau: Yub.string().required("Mật khẩu không được để trống"),
 })
-class Login extends Component{
 
-    _handleSubmit = (value) => {
-        console.log(value);
+function Login(){
+
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const handleSubmit = (value) => {
+        dispatch(loginRequest(value,history));
     }
 
-    render() {
-        return(
-            <>
+    return (
+        <>
                 <div className="wrapper">
                     <div className="wrapper__content">
                         <img src={logo} alt="login"/>
@@ -30,7 +36,7 @@ class Login extends Component{
                                     taiKhoan : "",
                                     matKhau : "",}}
                                 validationSchema={signInUserSchema}
-                                onSubmit={this._handleSubmit}
+                                onSubmit={handleSubmit}
                                 render={formikProps => (
                                     <Form>
                                         <Field id="taiKhoan" type="text" label="Tài khoản" name="taiKhoan" onChange={formikProps.handleChange} component={TextField}/>
@@ -43,8 +49,7 @@ class Login extends Component{
                     </div>
                 </div>
             </>
-        )
-    }
+    )
 }
 
 export default Login;
