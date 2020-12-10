@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { getMovieListRequest } from '../../redux/actions/home.action';
 import { CircularProgress, Grid } from '@material-ui/core';
 import HeaderHome from '../../components/headerHome';
+import FooterHome from '../../components/footerHome';
 
 
 class Home extends Component {
@@ -29,6 +30,7 @@ class Home extends Component {
             
             <div>
                 <HeaderHome/>
+                <FooterHome/> 
             </div>
         );
     }

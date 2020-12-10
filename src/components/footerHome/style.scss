@@ -1,0 +1,226 @@
+@import '../../assets/scss/variable';
+@import '../../assets/scss/function';
+
+.intro--wrap{
+    width: 100%;
+    .intro {
+    // background: url(../../../images/backapp.jpg);
+    background-size: contain;
+    padding-top: spacing(12);
+    padding-bottom: spacing(8);
+    .row {
+    .intro__bg {
+        .intro__content {
+        max-width: spacing(96);
+        .intro__left{
+            .textLeft{
+                font-weight: 700;
+                margin-bottom: spacing(1);
+                font-size: spacing(3.3);
+            }
+            .textSmallLeft{
+                font-size: spacing(1.7);
+                margin-bottom: spacing(1);
+            }
+            .intro__btn{
+                margin-bottom: spacing(1);
+                border: none;
+                border-radius: spacing(0.4);
+                font-weight: $fwBold;
+                font-size: spacing(1.7);
+                padding: spacing(1 , 2);
+                background-color: bg("Secondary");
+            }
+            .textAppUnder{
+                padding-top: spacing(1);
+                a{
+                    border-bottom: 1px solid bg("Primary");
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .intro__right{
+            .swiper{
+            img{
+                padding: 0 28%;
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+            .wrap{
+                position: absolute;
+                padding: 1.5% 29.3% 0 29.3%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                &--cus{
+                    border-radius: 20px;
+                    .swiper-container{
+                        .swiper-wrapper{
+                            border-radius: 20px;
+                            .swiper-slide{
+                                img{
+                                    padding: 8px;
+                                    border-radius: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        }
+        }
+    }
+    }
+}
+
+}
+
+.footer{
+    background-color: bg("FooterColor");
+    &__content{
+        max-width: spacing(96);
+        margin: auto;
+        .container{
+
+            .footer__content__first{
+                p{
+                    margin-bottom: spacing(1);
+                    font-size: 80%;
+                }
+
+                .footer__cate{
+                    .row{
+                        .first__cate{
+                            a{
+                                font-weight: $fwBold;
+                                font-size: $fs_footer;
+                                color: text_color("Secondary");
+                                white-space: nowrap;
+                                display: block;
+                                transition: all .2s;
+                                line-height: 2.3;
+                                &:hover{
+                                    text-decoration: none;
+                                    color: text_color("TextWhite");
+                                }
+                            }
+                        }
+                        .second__cate{
+                            a{
+                                font-weight: $fwBold;
+                                font-size: $fs_footer;
+                                color: text_color("Secondary");
+                                white-space: nowrap;
+                                display: block;
+                                transition: all .2s;
+                                line-height: 2.3;
+                                &:hover{
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .footer__logo{
+                    &__content{
+                        a{
+                            text-decoration: none;
+                            color: #000;
+                            cursor: pointer;
+                            transition: all .2s;
+                            img{
+                                background-color: bg("Primary");
+                                border-radius: 50%;
+                                height: 30px;
+                                width: 30px;
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                }
+
+                .footer__social{
+                    p{
+                        margin-bottom: spacing(1);
+                        font-size: 80%;
+                    }
+                    .row{
+                        .footer__social__app{
+                            a{
+                                text-decoration: none;
+                                color: #000;
+                                cursor: pointer;
+                                transition: all .2s;
+                                img{
+                                    height: spacing(3);
+                                    width: auto;
+                                    margin: spacing(0.5);
+                                }
+                            }
+                        }
+                        .footer__social__content{
+                            a{
+                                text-decoration: none;
+                                color: #000;
+                                cursor: pointer;
+                                transition: all .2s;
+                                img{
+                                    height: spacing(3);
+                                    width: auto;
+                                    margin: spacing(0.5);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .hrFooter{
+                background-color: bg("BgButton");
+            }
+
+            .footer__content__second{
+                text-align: center;
+                .footer__sponser{
+                    img{
+                        border-radius: spacing(0.8);
+                        width: spacing(8);
+                        height: auto;
+                    }
+                    a{
+                        cursor: pointer;
+                        img{
+                            width: spacing(13);
+                        }
+                    }
+                }
+
+                .footer__second__content{
+                    span{
+                        display: block;
+                        line-height: 1.8;
+                        color: text_color("Secondary");
+                        font-size: spacing(1.3);
+                        font-weight: $fwRegular;
+                    }
+                    .last__span{
+                        a{
+                            text-decoration: none;
+                            color: text_color("TextOrange");
+                            cursor: pointer;
+                            transition: all .2s;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

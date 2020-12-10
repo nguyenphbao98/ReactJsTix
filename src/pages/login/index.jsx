@@ -5,8 +5,8 @@ import { TextField , Button } from '@material-ui/core';
 import { Formik, Form , Field } from 'formik';
 import * as Yub from 'yup';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { loginRequest } from '../../redux/actions/user.action';
+import { useHistory } from "react-router-dom";
 
 const signInUserSchema = Yub.object().shape({
     taiKhoan : Yub.string().required("Tài khoản không được để trống"),
@@ -15,8 +15,8 @@ const signInUserSchema = Yub.object().shape({
 
 function Login(){
 
-    const history = useHistory();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleSubmit = (value) => {
         dispatch(loginRequest(value,history));

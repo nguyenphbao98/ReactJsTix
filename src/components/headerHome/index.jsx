@@ -1,13 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import './style.scss'
+import React from 'react';
+import './style.scss';
 import logo from '../../assets/img/web-logo.png';
 import userImg from '../../assets/img/avatar.png';
+import {useSelector} from 'react-redux';
 
 function HeaderHome() {
     //const {hoTen} = this.props;
 
-    const userData = JSON.parse(localStorage.getItem("user"));
-    const user = useState(userData);
+    // const userData = JSON.parse(localStorage.getItem("user"));
+    // const user = useState(userData);
+
+    const user = useSelector(state => state.user.credentials);
 
     return (
         // header
@@ -35,23 +38,16 @@ function HeaderHome() {
                 </li>
             </ul>
 
-            {/* {} */}
-            <a className="navbar-brand d-flex user" href="#">
+            {user ? (<a className="navbar-brand d-flex user" href="#">
                 <div className="user__logo text-center">B</div>
-                <span>{user['hoTen']}</span>
-            </a>
-
-            <a className="navbar-brand d-flex user" href="#">
+                    <span>{user.hoTen}</span>
+            </a>) : (<a className="navbar-brand d-flex user" href="/login">
                 <div className="user__img">
                     <img src={userImg} alt="signin"/>
                 </div>
                 <span>Đăng nhập</span>
-            </a>
-            <div className="d-flex align-items-center">
-                <a className="nav__logo" href="#">
-                    <i className="fa fa-map-marker-alt location" />
-                </a>
-            </div>
+            </a>)}
+            
             </div>
         </nav>
     </header>
