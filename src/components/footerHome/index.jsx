@@ -1,7 +1,12 @@
 import React from 'react';
 import './style.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import logog from '../../assets/img/cgv.png'
+
+const iconPath = '../../assets/img';
 
 function FooterHome() {
+
     return (
         <>
             {/* info */}
@@ -35,7 +40,7 @@ function FooterHome() {
                             <div className="swiper">
                             <img src="../images/mobile.png" alt="phone" />
                             <div className="wrap">
-                                <div className="wrap--cus">
+                                {/* <div className="wrap--cus">
                                 <div className="swiper-container">
                                     <div className="swiper-wrapper">
                                     <div className="swiper-slide"><img src="../images/slide6.jpg" alt="img" /></div>
@@ -44,7 +49,21 @@ function FooterHome() {
                                     <div className="swiper-slide"><img src="../images/slide5.jpg" alt="img" /></div>
                                     </div>
                                 </div>
-                                </div>
+                                </div> */}
+                                {/* <div className="wrap--cus">
+                                    {<Swiper className="swiper-wrapper"
+                                        spaceBetween={50}
+                                        slidesPerView={3}
+                                        Autoplay={5000}
+                                        onSlideChange={() => console.log('slide change')}
+                                        onSwiper={(swiper) => console.log(swiper)}
+                                        >
+                                        <SwiperSlide className="swiper-slide">Slide 1</SwiperSlide>
+                                        <SwiperSlide className="swiper-slide">Slide 2</SwiperSlide>
+                                        <SwiperSlide className="swiper-slide">Slide 3</SwiperSlide>
+                                        <SwiperSlide className="swiper-slide">Slide 4</SwiperSlide>
+                                    </Swiper>}
+                                </div> */}
                             </div>
                             </div>
                         </div>
@@ -55,8 +74,6 @@ function FooterHome() {
                 </div>
             </div>
             </section>
-
-
             {/* <!-- footer --> */}
             <footer className="footer">
             <div className="footer__content pb-5 pt-3">
@@ -81,7 +98,7 @@ function FooterHome() {
                     <p className="text-white">ĐỐI TÁC</p>
                     <div className="col-12 mb-3 footer__logo__content">
                         <a target="_blank" rel="noreferrer" href="https://www.cgv.vn/" title="CGV">
-                        <img className="iconConnect" src="../images/cgv.png" />
+                        <img className="iconConnect" src={`${logog}/cgv.png`} />
                         </a>
                         <a target="_blank" rel="noreferrer" href="https://www.cgv.vn/" title="CGV">
                         <img className="iconConnect" src="../images/cgv.png" />
